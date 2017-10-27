@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>11</title>
+</head>
+<body>
+  <div id="App">
+       <div :class="{'active':isActive,'error':isError}"></div>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+      new Vue({
+          el:'#App',
+          data:{
+            isActive:  true,
+            isError: false
+          }
+      })
+  </script>
+</body>
+</html>

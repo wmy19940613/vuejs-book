@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>19</title>
+</head>
+<body>
+   <div id="App">
+    <!-- <span v-for='item in items'>{{item}}</span> -->
+    <ul>
+      <li v-for='(item,key,index) in items'>{{index}}-{{key}}: {{item}}</li>
+    </ul>
+  </div>
+    <script src='vue221.js'></script>
+    <script>
+        new Vue({
+            el:'#App',
+            data:{
+                items:{
+                   name:'aa',
+                   age:12,
+                   gender:'nan'
+                }
+            }
+        })
+    </script>
+</body>
+</html>

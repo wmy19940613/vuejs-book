@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>12</title>
+</head>
+<body>
+   <div id="App">
+       <div :class='[activeCls,errorCls]'>
+           
+       </div>
+   </div>
+  <script src='vue221.js'></script>
+  <script>
+     new Vue({
+         el:'#App',
+         data:{
+            activeCls:  'active',
+            errorCls: 'error'
+         }
+     })
+  </script>
+</body>
+</html>

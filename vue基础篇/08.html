@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>08</title>
+</head>
+<body>
+   <div id="App">
+       <a v-bind:href='url'>lianjei</a>
+       <img v-bind:src='imgurl'>
+   </div>
+  <script src='vue221.js'></script>
+  <script>
+      new Vue({
+         el:'#App',
+         data: {
+            url:'https://github.com',
+            imgurl:'http://xxx.xxx.xx/img.jpg'
+         }
+      })
+  </script>
+</body>
+</html>

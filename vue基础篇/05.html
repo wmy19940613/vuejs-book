@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05</title>
+</head>
+<body>
+   <div id="App">
+       {{date | formatDate}}
+   </div>
+   <script src='vue221.js'></script>
+   <script>
+      new Vue({
+          el:'#App',
+          data:{
+            date: new Date()
+          },
+          mounted:function() {
+            var this1= this;
+            this.timer= setInterval(function() {
+                this1.date= new Date() ;
+            },1000)
+          },
+          brforeDestroy:function() {
+             if(this.timer){
+                 clearInterval(this.timer)
+             }
+          },
+          filters:{
+            formatDate:function(value) {
+                 var date = new Date()
+                 var year = date.getFullYear();
+                 var month = date.getMonth()+1;
+                 var day = date.getDate();
+                 var hours = date.getHours();
+                 var minutes =date.getMinutes();
+                 var seconds = date.getSeconds();
+                 return year +'/'+ month +'/'+ day +'/'+hours +':'+ minutes +':'+seconds
+            }
+          }
+      })
+   </script>
+</body>
+</html>

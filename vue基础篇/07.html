@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07</title>
+</head>
+<body>
+  <div id="App">
+       {{num/10}}
+       {{isOk?'queding':'quxiao'}}
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+      new Vue({
+         el:'#App',
+         data:{
+             num:1000,
+             isOk: false,
+         }
+      })
+  </script>
+</body>
+</html>

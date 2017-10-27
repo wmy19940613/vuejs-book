@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>16</title>
+</head>
+<body>
+  <div id="App">
+      <p v-if='status===1'>11111111</p>
+      <p v-else-if='status===2'>22222222</p>
+      <p v-else='status===3'>33333333</p>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+     new Vue({
+         el:'#App',
+         data:{
+            status:1
+         }
+     })
+  </script>
+</body>
+</html>

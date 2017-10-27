@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>02</title>
+</head>
+<body>
+  <div id="App">
+      <ul>
+        <li v-for='item in items'>{{item.name}}</li>
+      </ul>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+        new Vue({
+            el:'#App',
+            data:{
+               items:[
+                 {name:'wang'},
+                 {name:'meng'},
+                 {names:'yuan'}
+               ]
+            },
+            methods:{
+
+            }
+        })
+  </script>
+</body>
+</html>

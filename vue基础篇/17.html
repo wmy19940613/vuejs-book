@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>17</title>
+</head>
+<body>
+    <div id="App">
+        <p v-show='isshow'>asdad</p>
+        <button @click='button'>qiehuan </button>
+    </div>
+  <script src='vue221.js'></script>
+  <script>
+       new Vue({
+          el:'#App',
+          data:{
+             isshow:true
+          },
+          methods:{
+            button:function() {
+                this.isshow=!this.isshow;
+            }
+           }
+       })
+  </script>
+</body>
+</html>

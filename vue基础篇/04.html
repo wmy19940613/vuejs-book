@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04</title>
+</head>
+<body>
+  <div id="App">
+        
+  </div>
+<script src='vue221.js'></script>
+<script>
+     new Vue({
+        el:'#App',
+        data:{
+           a:2,
+        },
+        methods:{
+
+        },
+        beforeCreate:function() {
+          console.log(this.a)
+        },
+        created:function() {
+          console.log(this.a);
+        },
+        mounted:function() {
+           console.log(this.$el);
+        }
+     })
+</script>
+</body>
+</html>

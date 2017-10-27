@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>13</title>
+</head>
+<body>
+  <div id="App">
+        <div :style='styles'>lalala</div>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+       new Vue({
+           el:'#App',
+           data:{
+              styles:{
+                 color:'red',
+                 fontSize:  30 +'px'
+              }
+           }
+       })
+  </script>
+</body>
+</html>

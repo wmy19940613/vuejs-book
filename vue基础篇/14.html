@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>14</title>
+  <style>
+      [v-cloak] {
+         display: none;
+      }
+  </style>
+</head>
+<body>
+  <div id="App" v-cloak>
+       {{mag}}
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+      new Vue({
+          el:'#App',
+          data:{
+            mag:''
+          }
+      })
+  </script>
+</body>
+</html>
