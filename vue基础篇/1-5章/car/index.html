@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>car</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="App" v-cloak>
+       <template v-if='list.length'>
+         <table>
+             <thead>
+               <tr>
+                 <th></th>
+                 <th>商品名称</th>
+                 <th>商品单价</th>
+                 <th>购买数量</th>
+                 <th>操作</th>
+               </tr>
+             </thead>
+             <tbody>
+                <tr v-for='(item,index) in list'>
+                  <td>{{index+1}}</td>
+                  <td>{{item.name}}</td>
+                  <td>{{item.price}}</td>
+                  <!-- <td>{{item.count}}</td> -->
+                  <td>
+                      <button @click='handlerReduce(index)' :disabled='item.count===1'>-</button>
+                      {{item.count}}
+                      <button @click='handlerAdd(index)'>+</button>
+
+                  </td>
+                  <td>
+                    <button @click='handlerRemove(index)'>删除</button>
+                  </td>
+                </tr>
+             </tbody>
+         </table>
+         <div>￥ {{totalPrice}}</div>
+       </template>
+       <div v-else>
+          购物车为空
+       </div>
+  </div>
+  <script src='https://unpkg.com/vue/dist/vue.min.js'></script>
+  <script src='index.js'></script>
+</body>
+</html>

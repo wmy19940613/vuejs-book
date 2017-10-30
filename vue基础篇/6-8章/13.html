@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>局部组件</title>
+</head>
+<body>
+  <!-- vue的组件的模板在某些情况在会受到HTML的限制，比如table里面只允许是<tr><td><tbody>等，所以在table里面直接使用组件是无效的，所以可以使用特殊的is属性来挂载组件 -->
+    <div id="App">
+       <table>
+            <tbody is='my-component'>
+               
+            </tbody>
+       </table>
+    </div>
+    <script src='vue221.js'></script>
+    <script>
+       var Child={
+        template:'<div>我是写在table的里面的组件</div>'
+       }
+      var App=new Vue({
+        el:'#App',
+        components:{
+          'my-component':Child
+        }
+      })
+    </script>
+</body>
+</html>

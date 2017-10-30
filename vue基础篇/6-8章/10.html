@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>10</title>
+</head>
+<body>
+     <Card style='width:300px'>
+         <p slot='title'>与xxx聊天中</p>
+         <a href="#" slot='extra'>
+           <Icon type='android-close' size='18'>
+           </Icon>
+         </a>
+         <div style='height:100px'></div>
+         <div>
+           <Row :gutter='16'>
+             <i-col span='17'>
+               <i-input v-model='value' placeholder='请输入。。'>
+               </i-input>
+             </i-col>
+             <i-col>
+               <i-button type="primary">发送</i-button>
+             </i-col>
+           </Row>  
+         </div>
+     </Card>
+  <script src='vue221.js'></script>
+  <script>
+    
+  </script>
+</body>
+</html>

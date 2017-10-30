@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>20</title>
+</head>
+<body>
+  <div id="App">
+     <ul v-for='item in items'>
+         <li>{{item.name}}</li>
+         <li>{{item.book}}</li>
+     </ul>
+  </div>
+  <script src='./vue221.js'></script>
+  <script>
+      var App=new Vue({
+         el:'#App',
+         data:{
+            items:[
+              {
+                name:'jsssss',
+                book:'111'
+              },
+              {
+                name:'jsssss12',
+                book:'22'
+              },
+              {
+                name:'aaaaa',
+                book:'22'
+              }
+            ]
+         }
+      });
+      App.items=App.items.filter(function(item) {
+        return item.name.match(/jsssss/)
+      });
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>21</title>
+</head>
+<body>
+  <div id='App'>
+  {{counter}}
+  <button @click='handlerAdd()'>+1</button>
+  <button @click='handlerAdd(10)'>+10</button>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+    new Vue({
+      el:'#App',
+      data:{
+            counter:0
+         },
+         methods:{
+           handlerAdd:function(count) {
+               count=count||1;
+               this.counter+=count;
+           }
+         }
+      
+    })
+  </script>
+</body>
+</html>

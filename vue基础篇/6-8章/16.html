@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用props传递数据</title>
+</head>
+<body>
+   <div id="App">
+       <my-component message='来着父组件的数据'></my-component>
+   </div>
+  <script src='vue221.js'></script>
+  <script>
+    // 父组件向子组件传递数据用props
+    // props中声明的数据与组件data函数return的数据只要区别就是props的来自父级，
+    // 而data中的是组件自己的数据。这两个数据都可在template和computed，methods中使用。
+       Vue.component('my-component' ,{
+           props:['message'],
+          template:'<div>{{message}}</div>'
+       })
+       var App = new Vue({
+          el:'#App',
+       })
+  </script>
+</body>
+</html>

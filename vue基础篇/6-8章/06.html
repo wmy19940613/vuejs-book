@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>06</title>
+</head>
+<body>
+  <div id="App">
+      <input type="radio" v-model='picked' :value='text'>
+      <label for="text">{{picked}}</label>
+      <label>{{value}}</label>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+     new Vue({
+      el:'#App',
+      data:{
+         picked:false,
+         value:123
+      }
+     })
+  </script>
+</body>
+</html>

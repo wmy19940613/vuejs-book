@@ -18,7 +18,7 @@
   </div>
     <script src='vue221.js'></script>
     <script>
-        new Vue({
+       var App= new Vue({
             el:'#App',
             data:{
               items:[
@@ -31,8 +31,12 @@
                   book:'222'
                 }
               ]
-            }
-        })
+            },
+        });
+          App.items.push({
+              name:'haaha',
+              book:'3334'
+            })
     </script>
 </body>
 </html>

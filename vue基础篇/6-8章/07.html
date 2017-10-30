@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>07</title>
+</head>
+<body>
+  <div id="App">
+       <input type="checkbox" v-model='toggle' :ture-value='value1' :false-value='value2'>
+       <label>复选框</label>
+       <p>{{toggle}}</p> 
+       <p>{{value1}}</p>
+       <p>{{value2}}</p>
+ </div>
+  <script src='vue221.js'></script>
+  <script>
+     new Vue({
+        el:'#App',
+        data:{
+          toggle:false,
+          value1:'a',
+          value2:'b'
+        }
+     })
+  </script>
+</body>
+</html>

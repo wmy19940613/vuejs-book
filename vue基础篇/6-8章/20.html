@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>props数据验证</title>
+</head>
+<body>
+  <script src='vue221.js'></script>
+  <script>
+    Vue.component('my-component',{
+      props:{
+        propA:Number,
+        propB:[String,Number],
+        propC:{
+          type:Boolean,
+          default:true
+        },
+        propD:{
+          type:Number,
+          required:true
+        },
+        propE:{
+          type:Array,
+          default:function() {
+            return[];
+          }
+        },
+        propF:{
+          validator:function(value) {
+             return value >10;
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

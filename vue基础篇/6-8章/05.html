@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05</title>
+</head>
+<body>
+  <div id="App">
+      <select v-model='selected'>
+        <option v-for='option in options' :value='option.value'>{{option.text}}</option>
+      </select>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+    new Vue({
+      el:'#App',
+      data:{
+          selected:'html',
+          options:[
+             {
+              text:'HTML',
+              value:'html',
+             },
+             {
+              text:'CSS',
+              value:'css',
+             },
+             {
+              text:'JS',
+              value:'js',
+             },
+          ]
+      }
+    })
+  </script>
+</body>
+</html>

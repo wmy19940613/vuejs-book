@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>全局组件</title>
+</head>
+<body>
+   <div id="App">
+     <my-component></my-component>
+     <my-component></my-component>
+     <my-component></my-component>
+   </div>
+  <script src='vue221.js'></script>
+  <script>
+      Vue.component('my-component',{
+         template:'<button @click="counter++">{{counter}}</button>',
+         data:function() {
+             return{
+                counter:0
+             }
+         }
+      });
+      var App = new Vue({
+         el:'#App',
+      })
+  </script>
+</body>
+</html>

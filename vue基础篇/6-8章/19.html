@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>单项数据流</title>
+</head>
+<body>
+  <div id="App">
+      <my-component :init-count='1'></my-component>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+    //父组件传递初始值进来，子组件将他作为初始值保存起来，
+    //在自己作用域下随意修改与使用。
+    Vue.component('my-component',{
+      props:['initCount'],
+      template:'<div>{{count}}</div>',
+      data:function() {
+        return{
+           count:this.initCount
+        }
+      }
+    })
+    var App= new Vue({
+       el:'#App',
+    })
+    //组件中声明了count,他在组件初始化时会获取来自父组件的initcount,
+    //之后就与之无关了。只用维护count,避免直接操作inticount
+  </script>
+</body>
+</html>

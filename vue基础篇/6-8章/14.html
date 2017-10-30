@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>局部组件里面data的写法</title>
+</head>
+<body>
+  <div id="App">
+      <my-component></my-component>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+    // 组件也可像Vue实例一样使用data,computed,methods等，但是在使用data时，必须是函数，将数据return出去
+    Vue.component('my-component',{
+       template:'<div>{{msg}}</div>',
+        data:function() {
+           return{
+              msg:'hahaha'
+           }
+        }
+    })
+    var App=new Vue({
+      el:'#App',
+    })
+  </script>
+</body>
+</html>

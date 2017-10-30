@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>04</title>
+</head>
+<body>
+  <div id="App">
+   <!--    <input type="radio" v-model='picked' value='html' id='html'>
+      <label for="html">HTML</label>
+       <input type="radio" v-model='picked' value='js' id='js'>
+      <label for="js">JS</label>
+       <input type="radio" v-model='picked' value='css' id='css'>
+      <label for="css">CSS</label>
+      <br>
+      <p>选择的项为：{{picked}}</p> -->
+       <input type="checkbox" v-model='picked' value='html' id='html'>
+      <label for="html">HTML</label>
+       <input type="checkbox" v-model='picked' value='js' id='js'>
+      <label for="js">JS</label>
+       <input type="checkbox" v-model='picked' value='css' id='css'>
+      <label for="css">CSS</label>
+      <br>
+      <p>选择的项为：{{picked}}</p>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+    new Vue({
+      el:'#App',
+      data:{
+        // picked:'js'
+        picked:['js','css']
+      }
+    })
+  </script>
+</body>
+</html>
