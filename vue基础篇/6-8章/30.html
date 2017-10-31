@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>X-Templates</title>
+</head>
+<body>
+   <div id="App">
+      <my-component></my-component>
+      <script type='text/X-templates' id='my-component'>
+          <div>这里可以使用html写法随便写</div>
+      </script>
+   </div>
+   <script src='vue221.js'></script>
+   <script>
+    Vue.component('my-component', {
+        template:'#my-component'
+    })
+      var App=new Vue({
+         el:'#App',
+      })
+   </script>
+</body>
+</html>

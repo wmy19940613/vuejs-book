@@ -12,6 +12,8 @@
   <script>
     //父组件传递初始值进来，子组件将他作为初始值保存起来，
     //在自己作用域下随意修改与使用。
+    //如果template里面有绑定的数据变化时比如{{count}}，
+    //是在子组件上面绑定的,绑定的是子组件的数据，data写在创建的组件里面
     Vue.component('my-component',{
       props:['initCount'],
       template:'<div>{{count}}</div>',

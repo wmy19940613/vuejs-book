@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>编译的作用域</title>
+</head>
+<body>
+  <div id="App">
+    <!-- showChild绑定的是父组件的数据 -->
+      <my-component v-show="showChild"></my-component>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+       Vue.component('my-component',{
+           template:'<div>我是父组件的数据</div>',
+         })
+       var App=new Vue({
+          el:'#App',
+          data:{
+               showChild:true
+          }
+       })
+  </script>
+</body>
+</html>

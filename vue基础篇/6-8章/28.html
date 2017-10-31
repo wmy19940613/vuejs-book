@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>$nextTick</title>
+</head>
+<body>
+  <div id="App">
+      <div id='div' v-if='showDiv'>我被显示出来了</div>
+      <button @click='getText'>获取div的内容</button>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+    var App =new Vue({
+      el:'#App',
+      data:{
+         showDiv:false,
+      },
+      methods:{
+        getText:function() {
+            this.showDiv=true;
+            var text= document.getElementById('div').innerHTML;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

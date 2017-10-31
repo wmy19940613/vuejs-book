@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>单个slot的用法</title>
+</head>
+<body>
+   <div id="App">
+      <my-component>
+          <!--  <p>分发的内容</p>
+           <p>更多分发的内容</p> -->
+      </my-component>
+   </div>
+  <!-- slot分发内容 -->
+  <script src='vue221.js'></script>
+  <script>
+    Vue.component('my-component',{
+        template:'\
+             <div>\
+            <slot>\
+            <p>如果父组件没有插入内容，我将作为默认出现</p>\
+            </slot>\
+            </div>'
+      
+    })
+     var App=new Vue({
+        el:'#App',
+
+     })
+  </script>
+</body>
+</html>

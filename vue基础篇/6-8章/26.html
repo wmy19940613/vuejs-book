@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>具名slot</title>
+</head>
+<body>
+  <div id="App">
+       <my-component>
+         <h2 slot='header'>标题</h2>
+         <p>正文内容</p>
+         <p>更多正文内容</p>
+         <div slot='footer'>底部信息</div>
+       </my-component>
+  </div>
+   <script src='vue221.js'></script>
+   <script>
+      Vue.component('my-component',{
+         template:'\
+         <div class="container">\
+            <div class="header">\
+                <slot name="header"></slot>\
+            </div>\
+            <div class="main">\
+             <slot></slot>\
+           </div>\
+            <div class="footer">\
+            <slot name="footer">\
+            </slot>\
+            </div>\
+         </div>'
+      });
+       var App=new Vue({
+           el:'#App',
+       })
+   </script>
+</body>
+</html>

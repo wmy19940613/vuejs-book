@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义事件</title>
+</head>
+<body>
+  <div id="App">
+         <p>总数：{{total}}</p>
+         <!-- 组件名，increase,reduce是子组件向父组件传值时的名字 -->
+         <my-component @increase='handleGetTotal' @reduce='handleGetTotal'></my-component>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+    Vue.component('my-component',{
+       template:'\
+       <div>\
+           <button @click="handleIncrease">+1</button>\
+           <button @click="handleReduce">-1</button>\
+       </div>',
+       data:function() {
+          return {
+            counter:0
+          }
+       },
+       methods:{
+          handleIncrease:function() {
+            this.counter++;
+            // 通过$emit把counter的值传递给父组件，父组件通过@increase和@reduce接受，
+            // ￥emit第一个参数是自定义事件的名称，第二个是要传递的参数。
+            // @increase.@reduce是自定义事件
+            this.$emit('increase', this.counter);
+          },
+          handleReduce:function() {
+             this.counter--;
+             this.$emit('reduce',this.counter);
+          }
+       }
+    });
+    var App =new Vue({
+        el:'#App',
+        data:{
+           total:0
+        },
+        methods:{
+          handleGetTotal:function(total) {
+              this.total=total;
+          }
+        }
+    })
+  </script>
+</body>
+</html>
