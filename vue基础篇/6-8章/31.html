@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自定义指令</title>
+</head>
+<body>
+   <div id="App">
+      
+   </div>
+  <script src='vue221.js'></script>
+  <script>
+    //注册自定义指令的两种方法：
+    //全局注册：
+      Vue.directive('focus',{
+         //指令选项
+      })
+      var App =new Vue({
+         el :'#App',
+         //局部注册
+         directives:{
+           focus:{
+             //指令选项
+           }
+         }
+
+      })
+  </script>
+</body>
+</html>

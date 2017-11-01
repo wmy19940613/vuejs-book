@@ -7,7 +7,10 @@
 <body>
    <div id="App">
      <p>总数：{{total}}</p>
-     <my-component v-model='total'></my-component>
+     <p>姓名：{{total}}</p>
+     <my-component v-model='total' @input1="input2"></my-component>
+     <my-component2 @input3="input4" :items="items1" :value="value1" @getName="getName1"></my-component2>
+       
      <button @click='handleReduce'>-1</button>
    </div>
   <script src='vue221.js'></script>
@@ -17,20 +20,76 @@
       template:'<input :value="value" @input="updateValue">',
       methods:{
         updateValue:function(event) {
-           this.$emit('input',event.target.value)
+           console.log(event.target.value)
+
+           this.$emit('input1',event.target.value)
+        },   
+      }
+    });
+    Vue.component('my-component2', {
+      props:['value','items'],
+      template:'<div>\
+      <select :value="value" v-model="getValue" @change="updateName">\
+      <option v-for="item in items" :value="item.id">{{item.name}}</option>\
+      </select>\
+      <p> 选择了:{{getValue}}</p>\
+      </div>',
+      data:function() {
+        return{
+          getValue:''
+        }
+      },
+      methods:{
+         // getValue:function(event) {
+         //     console.log(event.target.value)
+         // }
+         updateName:function(event) {
+          console.log(event.target.options)
+            this.$emit('input3',event.target.options[event.target.selectedIndex].text)
+         }
+      },
+      computed:{
+        getValue1:function(){
+          let value=this.getValue
+          return this.$emit('getName',value)
         }
       }
     })
       var App=new Vue({
           el:'#App',
           data:{
-            total:0
+            name:'',
+            total:0,
+            items1:[
+               {
+                id:1,
+                name:'lisi'
+               },
+                {
+                id:2,
+                name:'lisi2'
+               },
+            ],
+            value1:1
+
           },
           methods:{
              handleReduce:function() {
                this.total--;
+             },
+              input2:function(e) {
+                 // console.log(e)
+                 this.total=e
+             },
+             getName1(e){
+                this.name = e
+             },
+             input4:function(e) {
+                 this.total=e
              }
-          }
+            
+          },
+
       })
   </script>
 </body>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>在不同钩子函数内完成代码逻辑</title>
+</head>
+<body>
+  <div id="App">
+     <input type="text" v-focus>
+  </div>
+  <script src='vue221.js'></script>
+  <script>
+    Vue.directive('focus',{
+       inserted: function(el) {
+           //聚焦元素
+           //input输入框自动获取焦点
+           el.focus();
+       }
+    })
+     var App = new Vue({
+       el:'#App',
+     })
+  </script>
+</body>
+</html>
