@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用javascript代替末班功能--for</title>
+</head>
+<body>
+  <div id="App">  
+    <ele :list="list"></ele>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script> 
+    Vue.component('ele',{
+        render:function(createElement) {
+          var nodes=[];
+          for(var i=0;i<this.list.length;i++) {
+              nodes.push(createElement('p',this.list[i]));
+          }
+          return createElement('div',nodes);
+        },
+        props:{
+          list:{
+            type:Array
+          }
+        }
+    }) 
+    var App=new Vue({
+      el:'#App',
+      data:{
+         list:[
+            '《vue》',
+            '《javascript》',
+            '《css》'
+         ]
+      }
+    })
+  </script>
+</body>
+</html>

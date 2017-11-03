@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用Javascript代替模板功能----if else</title>
+</head>
+<body>
+  <div id="App">
+    <ele :show="show"></ele>
+    <button @click='show =!show'>切换show</button>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script>
+    Vue.component('ele',{
+       render:function(createElement) {
+            if(this.show) {
+              return createElement('p','show的值为true')
+            }else{
+               return createElement('p','show的值为false')
+            }
+       },
+       props:{
+        show:{
+          type:Boolean,
+          default:false
+        }
+       }
+    })
+    var App=new Vue({
+        el:'#App',
+        data:{
+          show:false
+        }
+    })
+  </script>
+</body>
+</html>

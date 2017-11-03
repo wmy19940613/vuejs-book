@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+<div id="div1">
+<child v-for='n in 6' :level="n">Hello world!</child>
+<child v-for='n in 6' :level="n">Hello mimi!</child>
+</div>
+<script src='https://unpkg.com/vue/dist/vue.min.js'></script>
+<script type="text/javascript">
+Vue.component('child', {
+  render: function (createElement) {
+    return createElement(
+      'h' + this.level,   // tag name 标签名称，’h’+this.level根据level创建标签h1-h6，
+      //所以它只会渲染一个标签，而不是所有都渲染
+      this.$slots.default // 子组件中的阵列
+    )
+  },
+  props: {
+    level: {
+      type: Number,
+      required: true
+    }
+  },
+  created(){
+    console.log(this.$slots.default)
+  },
+})
+
+    new Vue({
+        el:"#div1"
+    })
+</script>
+</body>
+</html>

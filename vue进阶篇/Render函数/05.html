@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>使用javascript代替模板功能</title>
+</head>
+<body>
+  <div id="App"> 
+        <ele :list='list'></ele>
+        <button @click='handleClick'>显示列表</button>
+  </div>
+  <script src='https://unpkg.com/vue/dist/vue.min.js'></script>
+  <script>  
+      Vue.component('ele',{
+         render:function(createElement) {
+          //判断列表是否为空，如果是空，就渲染一个“列表为空”的<p>元素，
+          //如果不为空数组，就把每一项作为<li>渲染
+            if(this.list.length) {
+              return createElement('ul',this.list.map(function(item) {
+                return createElement('li',item);
+              }));
+            }else{
+              return createElement('p','列表为空')
+            }
+         },
+         props:{
+          list:{
+            type:Array,
+            default:function() {
+               return [];
+            }
+          }
+         }
+      });
+      var App=new Vue({
+        el:'#App',
+        data:{
+           list:[]
+        },
+        methods:{
+          handleClick:function() {
+            this.list=[
+                '《vue》',
+                '《js》',
+                '《css》'
+             ]
+          }
+        }
+      })
+  </script>
+</body>
+</html>

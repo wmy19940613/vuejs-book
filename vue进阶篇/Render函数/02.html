@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>render函数</title>
+</head>
+<body>
+  <div id="App">
+       <ele></ele> 
+  </div>
+  <script src='https://unpkg.com/vue/dist/vue.min.js'></script>
+  <script>
+    Vue.component('ele',{
+         render:function(createElement) {
+            return createElement(
+                 'div',
+                 {
+                   class:{
+                     'show':this.show
+                   },
+                   attrs:{
+                     id:'element'
+                   },
+                   //给div绑定click事件
+                   on:{
+                    click:this.handleClick
+                   }
+                 },
+                 '文本内容'
+              )
+         },
+         data:function() {
+            return{
+               show:true,
+            }
+         },
+         methods:{
+             handleClick:function() {
+                console.log('clicked!');
+             }
+         }
+         //但是显然这个实例用template的写法要比render函数写法简洁和可读，所以要在合适的场景使用render函数。否则会增加负担
+
+    })
+    var App= new Vue({
+      el:'#App',
+    })
+  </script>
+</body>
+</html>
